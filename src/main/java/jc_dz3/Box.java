@@ -4,10 +4,14 @@ import java.util.ArrayList;
 
 public class Box <T extends Fruit> {
     public ArrayList<T> list = new ArrayList<>();
-    
+
 
     public float getWeight() {
-        return list * list.size(). //не могу разобраться что здесь должно быть в продолжении
+        float weight = 0.0f;
+        for (T o : list) {
+            weight += o.getWeight();
+        }
+        return weight;
     }
 
     public void add(T fruit) {

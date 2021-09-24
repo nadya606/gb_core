@@ -19,7 +19,7 @@ public class HomeWork3_2 {
 
         Box<Orange> box2 = new Box<>();
         box2.add(new Orange(2));
-        System.out.println(box1.getWeight());
+        System.out.println(box2.getWeight());
 
         System.out.println(box1);
         System.out.println(box2);
