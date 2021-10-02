@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Weather {
+
     //URL url = new URL("http://dataservice.accuweather.com/forecasts/v1/daily/5day/");
 
     public ResponseBody getWeather(String key) throws IOException {
