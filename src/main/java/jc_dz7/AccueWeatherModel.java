@@ -7,6 +7,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.List;
 
 public class AccueWeatherModel implements WeatherModel {
 
@@ -25,6 +26,8 @@ public class AccueWeatherModel implements WeatherModel {
 
     private static final OkHttpClient okHttpClient = new OkHttpClient();
     public static final ObjectMapper objectMapper = new ObjectMapper();
+
+    private DbRepository dataBaseRepository = new DbRepository();
 
 
     //@Override
@@ -51,7 +54,7 @@ public class AccueWeatherModel implements WeatherModel {
                 System.out.println(weatherResponse);
                 break;
 
-            case FIVE_DAYS:
+            /*case FIVE_DAYS:
                 HttpUrl httpUrl5day = new HttpUrl.Builder()
                         .scheme(PROTOKOL)
                         .host(BASE_HOST)
@@ -69,8 +72,18 @@ public class AccueWeatherModel implements WeatherModel {
                 Response fiveDayForecastResponse = okHttpClient.newCall(request5day).execute();
                 String weatherResponse5day = fiveDayForecastResponse.body().string();
                 System.out.println(weatherResponse5day);
-                break;
+                break;*/
         }
+    }
+
+    @Override
+
+    public List<weatherResponse> getSavedToDBWeather() {
+        return DbRepository.getSavedToDBWeather();
+    /*@Override
+                public weatherResponse getSavedToDBWeather() {
+            return null
+        }*/
     }
     /*private String detectCityKey(String city) {
         return null;*/
